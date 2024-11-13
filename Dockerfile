@@ -1,11 +1,14 @@
 # Use the official NGINX image from Docker Hub
 FROM nginx:alpine
 
-# Copy the NGINX configuration file into the container
+# Copy the custom NGINX configuration into the container
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Expose port 8080 (Cloud Run default)
+# Copy any static files if needed
+COPY index.html /usr/share/nginx/html/
+
+# Expose port 8080 for Cloud Run
 EXPOSE 8080
 
-# Start NGINX in the foreground (necessary for Cloud Run)
+# Run NGINX in the foreground
 CMD ["nginx", "-g", "daemon off;"]
