@@ -4,7 +4,7 @@ FROM nginx:alpine
 # Copy the custom NGINX configuration into the container
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy any static files if needed
+# Copy index.html into the NGINX HTML directory
 COPY index.html /usr/share/nginx/html/
 
 # Expose port 8080 for Cloud Run
