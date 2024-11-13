@@ -1,0 +1,19 @@
+# Ignore Dockerfile build cache
+.docker/
+
+# Ignore the default system files
+.DS_Store
+Thumbs.db
+
+# Ignore node_modules (if you're adding a Node.js app or similar in the future)
+node_modules/
+
+# Ignore compiled binary files
+*.out
+*.exe
+*.o
+*.a
+*.so
+
+# Ignore log files
+*.log
